@@ -8,14 +8,14 @@ if(isset($_GET['status'])){
 $status = $_GET['status'];
 }
 
-$query="select * from treatment;";
+$query="select p.id,p.practitionerId,c.* from patient p,contact c where p.contactId = c.id;";
 $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
 
 $arr = array();
 if($result->num_rows > 0) {
-	while($row = $result->fetch_assoc()) {
-		$arr[] = $row;
-	}
+  while($row = $result->fetch_assoc()) {
+    $arr[] = $row;
+  }
 }
 
 # JSON-encode the response

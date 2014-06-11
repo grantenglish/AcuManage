@@ -19,7 +19,7 @@ create table if not exists contact (
 
 create table if not exists treatment (
   id int(11) not null auto_increment,
-  pratitionerId int(11) not null,
+  practitionerId int(11) not null,
   patientId int(11) not null,
   roomId int(11),
   trtDateTime datetime default null,
@@ -37,7 +37,7 @@ create table if not exists patient (
 
 create table if not exists appointment (
   id int(11) not null auto_increment,
-  practionerId int(11),
+  practitionerId int(11),
   patientId int(11),
   appDatetime datetime default null,
   notes varchar(2048),
