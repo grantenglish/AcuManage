@@ -8,6 +8,7 @@ if(isset($_GET['status'])){
 $status = $_GET['status'];
 }
 
+//$mysqli = new mysqli("localhost", "root", "11246Albeth", "AcuManage");
 $query="select p.id,p.practitionerId,c.* from patient p,contact c where p.contactId = c.id;";
 $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
 
@@ -19,5 +20,10 @@ if($result->num_rows > 0) {
 }
 
 # JSON-encode the response
+$json_response = json_encode($arr);
 echo $json_response = json_encode($arr);
+
+// debug show the row count
+//echo 'document.write("<p> some '. $result->num_rows .'more</p>");';
+
 ?>
