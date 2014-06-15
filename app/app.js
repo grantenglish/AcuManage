@@ -29,7 +29,7 @@ app.controller('patientssController', function($scope, $http) {
   };
 
   //
-  // delete patient and return remaiing
+  // delete patient and return remaining
   //
   $scope.deletePatient = function (patient) {
     $http.get("ajax/deletePatient.php?patientId="+patient).success(function(data){
