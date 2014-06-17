@@ -1,7 +1,7 @@
 //Define an angular module for our app
-var app = angular.module('AcuManage', []);
+var app = angular.module('myApp', []);
 
-app.controller('patientssController', function($scope, $http) {
+app.controller('patientsController', function($scope, $http) {
   getPatients(); // Load all available patients
   function getPatients(){
   $http.get("ajax/getPatients.php").success(function(data){
